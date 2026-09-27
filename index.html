@@ -11,41 +11,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&family=Space+Grotesk:wght@300..700&family=Workbench&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Ibarra+Real+Nova:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&family=Space+Grotesk:wght@300..700&family=Workbench&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body> 
     <header>
         <nav>
             <div style="display: flex; align-items: center;">
                 <span ><svg xmlns="http://w3.org" viewBox="0 0 100 100" width="40px" height="30px">
                     <!-- Greater-Than Sign (>) -->
-                    <path  d="M15 20 A 4.5 4.5 0 0 1 22 17.5 L 42 45 A 6 6 0 0 1 42 55 L 22 82.5 A 4.5 4.5 0 0 1 15 80 A 4.5 4.5 0 0 1 16.5 73.5 L 33 50 L 16.5 26.5 A 4.5 4.5 0 0 1 15 20 Z" fill="#06B6D4" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path  d="M15 20 A 4.5 4.5 0 0 1 22 17.5 L 42 45 A 6 6 0 0 1 42 55 L 22 82.5 A 4.5 4.5 0 0 1 15 80 A 4.5 4.5 0 0 1 16.5 73.5 L 33 50 L 16.5 26.5 A 4.5 4.5 0 0 1 15 20 Z" fill="#2DD4BF" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     <!-- Cursor / Underscore (_) -->
-                    <rect x="46" y="73"  width="38" height="9" rx="4.5" ry="4.5" fill="#06B6D4"/>
+                    <rect x="46" y="73"  width="38" height="9" rx="4.5" ry="4.5" fill="#2DD4BF"/>
                 </svg></span>  
-                <span>GitFinder</span>
+                <span id="git-nav">GitFinder</span>
             </div>
             <div id="nav-about" class="flex justify-between items-center gap-12">
-                <span class="hover:text-white">About</span>
-                <span class="hover:text-white">GitHub</span>
+                <span class="text-[#8B949E] hover:text-[#E6EDF3] ">About</span>
+                <span class="text-[#8B949E] hover:text-[#E6EDF3]">GitHub</span>
             </div>
         </nav>
     </header>
+
     <main>
         <section id="hero" class="hero-section">
                 <div id="heading-part">
                     <h2>Find. Explore. Discover.</h2>
                     <div id="describe-hero">
                         <p>GitHub developers</p>
-                        <p>Explore profiles , repositories & activity</p>
+                        <p>Explore profiles , repositories & activities.</p>
                     </div>
                 </div>
 
-                <div class="flex flex-col justify-center gap-15">
-                    <form id="github-form" action="" class="flex justify-between gap-0 border-collapse">
-                        <input type="text" id="github-username" placeholder="Enter GitHub username...">
-                        <button >Search</button>
-                    </form>
+                <div class="flex flex-col justify-center gap-18">
+                    <div class="flex flex-col gap-4">
+                        <form id="github-form" action="" class="flex justify-between gap-0 border-collapse">
+                            <input type="text" id="github-username" placeholder="Enter GitHub Username...">
+                            <button >Search</button>
+                        </form>
+
+                        <small id="hint">Search any GitHub profile!</small>
+                    </div>
 
                     <div id="formDiv" class="flex gap-5 items-center justify-between">
                         <div class="flex justify-center items-center border rounded-md text-lg">&#10003; Public Profiles</div>
@@ -61,14 +69,22 @@
             <div id="activity">Activity</div> -->
         </div>
     </main>
+
     <footer>
         <div id="git-discover">
 
             <div id="footer-gitfind">
                     <div>
                         <div id="git-icon">
-                            <p>Icon</p>
-                            <h3>GitFinder</h2>
+                            <span>
+                                <svg xmlns="http://w3.org" viewBox="0 0 100 100" width="40px" height="30px">
+                                <!-- Greater-Than Sign (>) -->
+                                <path  d="M15 20 A 4.5 4.5 0 0 1 22 17.5 L 42 45 A 6 6 0 0 1 42 55 L 22 82.5 A 4.5 4.5 0 0 1 15 80 A 4.5 4.5 0 0 1 16.5 73.5 L 33 50 L 16.5 26.5 A 4.5 4.5 0 0 1 15 20 Z" fill="#2DD4BF" stroke="#000000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <!-- Cursor / Underscore (_) -->
+                                <rect x="46" y="73"  width="38" height="9" rx="4.5" ry="4.5" fill="#2DD4BF"/>
+                                </svg>
+                            </span>  
+                            <span id="git-nav">GitFinder</span>
                         </div>
 
                         <div id="source-code">
@@ -85,7 +101,7 @@
             <p>&copy; 2026 GitFinder</p>
             <p>Built with HTML, CSS & JavaScript</p>
         </div>
-    </footer>
+    </footer> 
     <script src="index.js"></script>
 </body>
 </html>
