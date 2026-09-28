@@ -165,8 +165,7 @@ nav{
     /* background-color:#996eff; */
     color: azure;
     box-shadow: 0px 0px 3px rgb(182, 175, 175);
-    animation: raise 5s linear 0s ease-out;
-    transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
     transform: scale(1.1);
 }
 
@@ -293,7 +292,7 @@ footer{
 }
 
 .visible{
-    display: visible;
+    display: block;
     padding: 130px 50px;
     /* background: linear-gradient(#8c63ea, #F0F6FC, #8c63ea); */
 }
@@ -303,71 +302,142 @@ footer{
 }
 
 
+/* ==========================================================
+   RESPONSIVE / MEDIA QUERIES  (desktop-first)
+   ========================================================== */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.jetbrains-mono-<uniquifier> {
-  font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+/* ---------- Extra-large screens (TVs, 4K, ultrawide) ---------- */
+@media (min-width: 1600px) {
+    html { font-size: 18px; }
+    nav, .hero-section, footer, .visible {
+        max-width: 1600px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    form input { width: 40vw; }
+    form button { width: 6vw; }
 }
 
-
-
-.inter-<uniquifier> {
-  font-family: "Inter", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+/* ---------- Laptops / small desktops (<= 1200px) ---------- */
+@media (max-width: 1200px) {
+    .hero-section { padding: 60px 40px; }
+    .hero-section h2 { font-size: 48px; }
+    #describe-hero p:first-of-type { font-size: 34px; }
+    form input { width: 55vw; }
+    form button { width: 10vw; min-width: 90px; }
 }
 
+/* ---------- Tablets landscape (<= 1024px) ---------- */
+@media (max-width: 1024px) {
+    .hero-section { padding: 50px 30px; }
+    .hero-section h2 { font-size: 44px; letter-spacing: 4px; }
+    #describe-hero p:first-of-type { font-size: 30px; }
+    #describe-hero p:last-of-type { font-size: 18px; }
+    form input { width: 60vw; }
+    .visible { padding: 90px 30px; }
+}
 
+/* ---------- Tablets portrait (<= 768px) ---------- */
+@media (max-width: 768px) {
+    nav { padding: 8px 16px; }
+    #nav-about { gap: 24px !important; }
 
-.space-grotesk-<uniquifier> {
-  font-family: "Space Grotesk", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+    .hero-section { padding: 40px 20px; gap: 16px; }
+    #heading-part { gap: 24px; text-align: center; }
+    .hero-section h2 { font-size: 38px; letter-spacing: 3px; line-height: 1.15; }
+    #describe-hero p:first-of-type { font-size: 26px; letter-spacing: 2px; }
+    #describe-hero p:last-of-type { font-size: 16px; letter-spacing: 1.5px; text-align: center; }
+
+    /* search form: input takes remaining space, button keeps a usable tap size */
+    #github-form { width: 100%; }
+    form input { flex: 1; width: auto; min-width: 0; font-size: 16px; /* stops iOS zoom */ }
+    form button { width: auto; min-width: 100px; padding: 11px 16px; }
+
+    /* feature pills wrap instead of overflowing */
+    #formDiv { flex-wrap: wrap; justify-content: center; gap: 12px !important; }
+    #formDiv div { font-size: 16px; padding: 12px 14px; }
+
+    footer { padding: 20px; }
+    .visible { padding: 60px 20px; }
+}
+
+/* ---------- Large phones (<= 600px) ---------- */
+@media (max-width: 600px) {
+    .hero-section h2 { font-size: 32px; letter-spacing: 2px; }
+    #describe-hero p:first-of-type { font-size: 22px; letter-spacing: 1px; }
+    #describe-hero p:last-of-type { font-size: 15px; letter-spacing: 1px; }
+
+    /* stack the three feature pills */
+    #formDiv { flex-direction: column; align-items: stretch; }
+    #formDiv div { width: 100%; }
+
+    /* footer: stack everything */
+    #footer-gitfind > div { flex-direction: column; align-items: flex-start; gap: 12px; }
+    #source-code { gap: 16px; }
+    #git-copyright { flex-direction: column; gap: 4px; font-size: 14px; }
+    #git-discover p { font-size: 14px; }
+}
+
+/* ---------- Small phones (<= 480px) ---------- */
+@media (max-width: 480px) {
+    nav { padding: 6px 12px; }
+    #git-nav { font-size: 15px; }
+    #nav-about { gap: 16px !important; font-size: 14px; }
+
+    .hero-section { padding: 30px 14px; }
+    .hero-section h2 { font-size: 28px; letter-spacing: 1px; }
+    #describe-hero p:first-of-type { font-size: 20px; }
+    #describe-hero p:last-of-type { font-size: 14px; }
+
+    /* search form stacks: full-width input, full-width button */
+    #github-form { flex-direction: column; gap: 10px !important; }
+    form input { width: 100%; padding: 13px 10px; }
+    form button { width: 100%; padding: 13px; }
+
+    #hint { font-size: 13px; }
+    #formDiv div { font-size: 15px; }
+    .visible { padding: 40px 14px; }
+}
+
+/* ---------- Very small phones (<= 360px) ---------- */
+@media (max-width: 360px) {
+    .hero-section h2 { font-size: 24px; letter-spacing: 0.5px; }
+    #describe-hero p:first-of-type { font-size: 18px; letter-spacing: 0.5px; }
+    #describe-hero p:last-of-type { letter-spacing: 0.5px; }
+    #formDiv div { font-size: 14px; padding: 10px; }
+    footer { padding: 16px 12px; }
+}
+
+/* ---------- Landscape phones (short viewport height) ---------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section { padding: 24px 24px; gap: 12px; }
+    #heading-part { gap: 12px; }
+    .hero-section h2 { font-size: 28px; }
+    #describe-hero p:first-of-type { font-size: 20px; }
+    #github-form { flex-direction: row; }
+    form input { width: 60vw; }
+    form button { width: auto; }
+}
+
+/* ---------- Touch devices: no hover-only effects ---------- */
+@media (hover: none) {
+    #formDiv div:hover { transform: none; box-shadow: none; color: #b2b6ba; }
+    form button:hover { transform: none; background-color: var(--color-accent-deep); }
+    form button:active { background-color: var(--color-accent); transform: scale(0.98); }
+}
+
+/* ---------- Respect reduced-motion preference ---------- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ---------- Print ---------- */
+@media print {
+    html { background: #fff; }
+    header, footer, form, #hint, #formDiv { display: none; }
+    * { color: #000 !important; }
 }
